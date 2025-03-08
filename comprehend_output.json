@@ -1,0 +1,839 @@
+{
+    "Entities": [
+        {
+            "Id": 60,
+            "BeginOffset": 4,
+            "EndOffset": 15,
+            "Score": 0.9462065100669861,
+            "Text": "Onkar Bhave",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "NAME",
+            "Traits": []
+        },
+        {
+            "Id": 61,
+            "BeginOffset": 60,
+            "EndOffset": 66,
+            "Score": 0.9495497345924377,
+            "Text": "270988",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "PHONE_OR_FAX",
+            "Traits": []
+        },
+        {
+            "Id": 62,
+            "BeginOffset": 79,
+            "EndOffset": 92,
+            "Score": 0.3044394254684448,
+            "Text": "Bank, Kothrud",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "NAME",
+            "Traits": []
+        },
+        {
+            "Id": 63,
+            "BeginOffset": 110,
+            "EndOffset": 120,
+            "Score": 0.9107075929641724,
+            "Text": "8983390126",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "ID",
+            "Traits": []
+        },
+        {
+            "Id": 64,
+            "BeginOffset": 121,
+            "EndOffset": 127,
+            "Score": 0.8299877047538757,
+            "Text": "411038",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "PHONE_OR_FAX",
+            "Traits": []
+        },
+        {
+            "Id": 65,
+            "BeginOffset": 144,
+            "EndOffset": 150,
+            "Score": 0.6207433342933655,
+            "Text": "094233",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "PHONE_OR_FAX",
+            "Traits": []
+        },
+        {
+            "Id": 66,
+            "BeginOffset": 211,
+            "EndOffset": 222,
+            "Score": 0.2974364161491394,
+            "Text": "27-Apr-2020",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "ID",
+            "Traits": []
+        },
+        {
+            "Id": 2,
+            "BeginOffset": 274,
+            "EndOffset": 278,
+            "Score": 0.7613970637321472,
+            "Text": "Temp",
+            "Category": "TEST_TREATMENT_PROCEDURE",
+            "Type": "TEST_NAME",
+            "Traits": [],
+            "Attributes": [
+                {
+                    "Type": "TEST_UNIT",
+                    "Score": 0.7950295805931091,
+                    "RelationshipScore": 0.7814922332763672,
+                    "RelationshipType": "TEST_UNIT",
+                    "Id": 3,
+                    "BeginOffset": 280,
+                    "EndOffset": 283,
+                    "Text": "deg",
+                    "Category": "TEST_TREATMENT_PROCEDURE",
+                    "Traits": []
+                },
+                {
+                    "Type": "TEST_VALUE",
+                    "Score": 0.90631103515625,
+                    "RelationshipScore": 0.7552722692489624,
+                    "RelationshipType": "TEST_VALUE",
+                    "Id": 4,
+                    "BeginOffset": 286,
+                    "EndOffset": 288,
+                    "Text": "36",
+                    "Category": "TEST_TREATMENT_PROCEDURE",
+                    "Traits": []
+                }
+            ]
+        },
+        {
+            "Id": 5,
+            "BeginOffset": 290,
+            "EndOffset": 292,
+            "Score": 0.8435389995574951,
+            "Text": "BP",
+            "Category": "TEST_TREATMENT_PROCEDURE",
+            "Type": "TEST_NAME",
+            "Traits": [],
+            "Attributes": [
+                {
+                    "Type": "TEST_VALUE",
+                    "Score": 0.8617406487464905,
+                    "RelationshipScore": 0.8534350991249084,
+                    "RelationshipType": "TEST_VALUE",
+                    "Id": 6,
+                    "BeginOffset": 294,
+                    "EndOffset": 300,
+                    "Text": "120/80",
+                    "Category": "TEST_TREATMENT_PROCEDURE",
+                    "Traits": []
+                },
+                {
+                    "Type": "TEST_UNIT",
+                    "Score": 0.8921527862548828,
+                    "RelationshipScore": 0.8219892978668213,
+                    "RelationshipType": "TEST_UNIT",
+                    "Id": 7,
+                    "BeginOffset": 301,
+                    "EndOffset": 305,
+                    "Text": "mmHg",
+                    "Category": "TEST_TREATMENT_PROCEDURE",
+                    "Traits": []
+                }
+            ]
+        },
+        {
+            "Id": 26,
+            "BeginOffset": 682,
+            "EndOffset": 707,
+            "Score": 0.7950295805931091,
+            "Text": "AVOID OILY AND SPICY FOOD",
+            "Category": "TEST_TREATMENT_PROCEDURE",
+            "Type": "TREATMENT_NAME",
+            "Traits": []
+        },
+        {
+            "Id": 67,
+            "BeginOffset": 719,
+            "EndOffset": 729,
+            "Score": 0.9930756092071533,
+            "Text": "12-05-2020",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 68,
+            "BeginOffset": 803,
+            "EndOffset": 808,
+            "Score": 0.1862751692533493,
+            "Text": "23-02",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 69,
+            "BeginOffset": 810,
+            "EndOffset": 815,
+            "Score": 0.7074201703071594,
+            "Text": "09-03",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 70,
+            "BeginOffset": 817,
+            "EndOffset": 829,
+            "Score": 0.18080103397369385,
+            "Text": "22-01- 05-04",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 71,
+            "BeginOffset": 831,
+            "EndOffset": 836,
+            "Score": 0.724445104598999,
+            "Text": "19-04",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 72,
+            "BeginOffset": 838,
+            "EndOffset": 843,
+            "Score": 0.6355286836624146,
+            "Text": "03-05",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 73,
+            "BeginOffset": 845,
+            "EndOffset": 850,
+            "Score": 0.21734321117401123,
+            "Text": "17-05",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 74,
+            "BeginOffset": 852,
+            "EndOffset": 857,
+            "Score": 0.5604466795921326,
+            "Text": "23-02",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 75,
+            "BeginOffset": 859,
+            "EndOffset": 864,
+            "Score": 0.17987944185733795,
+            "Text": "08-03",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 76,
+            "BeginOffset": 891,
+            "EndOffset": 901,
+            "Score": 0.3069930672645569,
+            "Text": "17-05 2020",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 77,
+            "BeginOffset": 902,
+            "EndOffset": 911,
+            "Score": 0.7842314839363098,
+            "Text": "2020 2020",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 78,
+            "BeginOffset": 912,
+            "EndOffset": 921,
+            "Score": 0.7178204655647278,
+            "Text": "2020 2020",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 79,
+            "BeginOffset": 922,
+            "EndOffset": 926,
+            "Score": 0.504740834236145,
+            "Text": "2020",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 80,
+            "BeginOffset": 927,
+            "EndOffset": 931,
+            "Score": 0.7174527049064636,
+            "Text": "2020",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 81,
+            "BeginOffset": 932,
+            "EndOffset": 936,
+            "Score": 0.755620539188385,
+            "Text": "2820",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "ID",
+            "Traits": []
+        },
+        {
+            "Id": 82,
+            "BeginOffset": 937,
+            "EndOffset": 941,
+            "Score": 0.7389855980873108,
+            "Text": "2520",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "ID",
+            "Traits": []
+        },
+        {
+            "Id": 83,
+            "BeginOffset": 942,
+            "EndOffset": 946,
+            "Score": 0.5555446147918701,
+            "Text": "2020",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 84,
+            "BeginOffset": 947,
+            "EndOffset": 951,
+            "Score": 0.4867374300956726,
+            "Text": "2020",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 85,
+            "BeginOffset": 952,
+            "EndOffset": 956,
+            "Score": 0.4630560278892517,
+            "Text": "2020",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 86,
+            "BeginOffset": 957,
+            "EndOffset": 961,
+            "Score": 0.6476343274116516,
+            "Text": "2020",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 87,
+            "BeginOffset": 962,
+            "EndOffset": 966,
+            "Score": 0.7379127740859985,
+            "Text": "2020",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "DATE",
+            "Traits": []
+        },
+        {
+            "Id": 88,
+            "BeginOffset": 991,
+            "EndOffset": 1004,
+            "Score": 0.999618649482727,
+            "Text": "Onkar Bhave M",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "NAME",
+            "Traits": []
+        },
+        {
+            "Id": 89,
+            "BeginOffset": 1005,
+            "EndOffset": 1006,
+            "Score": 0.31551262736320496,
+            "Text": "B",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "NAME",
+            "Traits": []
+        },
+        {
+            "Id": 90,
+            "BeginOffset": 1007,
+            "EndOffset": 1008,
+            "Score": 0.2060261219739914,
+            "Text": "B",
+            "Category": "PROTECTED_HEALTH_INFORMATION",
+            "Type": "NAME",
+            "Traits": []
+        }
+    ],
+    "UnmappedAttributes": [
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "DURATION",
+                "Score": 0.5971075296401978,
+                "Id": 9,
+                "BeginOffset": 381,
+                "EndOffset": 388,
+                "Text": "10 Days",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "FREQUENCY",
+                "Score": 0.5330596566200256,
+                "Id": 10,
+                "BeginOffset": 390,
+                "EndOffset": 401,
+                "Text": "Before Food",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "FORM",
+                "Score": 0.6603351831436157,
+                "Id": 11,
+                "BeginOffset": 419,
+                "EndOffset": 422,
+                "Text": "CAP",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "FREQUENCY",
+                "Score": 0.5330596566200256,
+                "Id": 12,
+                "BeginOffset": 440,
+                "EndOffset": 458,
+                "Text": "1 Morning, 1 Night",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "DURATION",
+                "Score": 0.7950295805931091,
+                "Id": 13,
+                "BeginOffset": 459,
+                "EndOffset": 466,
+                "Text": "10 Days",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "FREQUENCY",
+                "Score": 0.7613970637321472,
+                "Id": 14,
+                "BeginOffset": 468,
+                "EndOffset": 479,
+                "Text": "Before Food",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "FORM",
+                "Score": 0.7613970637321472,
+                "Id": 16,
+                "BeginOffset": 497,
+                "EndOffset": 500,
+                "Text": "TAB",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "FREQUENCY",
+                "Score": 0.5330596566200256,
+                "Id": 17,
+                "BeginOffset": 518,
+                "EndOffset": 550,
+                "Text": "1 Morning, 1 Aft, 1 Eve, 1 Night",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "DURATION",
+                "Score": 0.7172441482543945,
+                "Id": 18,
+                "BeginOffset": 551,
+                "EndOffset": 558,
+                "Text": "10 Days",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "FORM",
+                "Score": 0.7172441482543945,
+                "Id": 20,
+                "BeginOffset": 588,
+                "EndOffset": 591,
+                "Text": "TAB",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "DOSAGE",
+                "Score": 0.5330596566200256,
+                "Id": 23,
+                "BeginOffset": 607,
+                "EndOffset": 608,
+                "Text": "4",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "FREQUENCY",
+                "Score": 0.5330596566200256,
+                "Id": 21,
+                "BeginOffset": 609,
+                "EndOffset": 631,
+                "Text": "1/2 Morning, 1/2 Night",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "DURATION",
+                "Score": 0.821601390838623,
+                "Id": 22,
+                "BeginOffset": 632,
+                "EndOffset": 639,
+                "Text": "10 Days",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "MEDICATION",
+            "Attribute": {
+                "Type": "FREQUENCY",
+                "Score": 0.5330596566200256,
+                "Id": 24,
+                "BeginOffset": 641,
+                "EndOffset": 651,
+                "Text": "After Food",
+                "Category": "MEDICATION",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.5330596566200256,
+                "Id": 28,
+                "BeginOffset": 737,
+                "EndOffset": 739,
+                "Text": "40",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.821601390838623,
+                "Id": 29,
+                "BeginOffset": 740,
+                "EndOffset": 742,
+                "Text": "17",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.8617406487464905,
+                "Id": 30,
+                "BeginOffset": 743,
+                "EndOffset": 746,
+                "Text": "140",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.8921527862548828,
+                "Id": 31,
+                "BeginOffset": 747,
+                "EndOffset": 750,
+                "Text": "120",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.7613970637321472,
+                "Id": 32,
+                "BeginOffset": 751,
+                "EndOffset": 754,
+                "Text": "129",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.8617406487464905,
+                "Id": 33,
+                "BeginOffset": 755,
+                "EndOffset": 758,
+                "Text": "120",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.7613970637321472,
+                "Id": 34,
+                "BeginOffset": 759,
+                "EndOffset": 761,
+                "Text": "35",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.8435389995574951,
+                "Id": 35,
+                "BeginOffset": 762,
+                "EndOffset": 765,
+                "Text": "120",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.5330596566200256,
+                "Id": 36,
+                "BeginOffset": 766,
+                "EndOffset": 768,
+                "Text": "30",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.6603351831436157,
+                "Id": 37,
+                "BeginOffset": 769,
+                "EndOffset": 772,
+                "Text": "100",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.877546489238739,
+                "Id": 38,
+                "BeginOffset": 773,
+                "EndOffset": 775,
+                "Text": "90",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.7172441482543945,
+                "Id": 39,
+                "BeginOffset": 781,
+                "EndOffset": 783,
+                "Text": "80",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.877546489238739,
+                "Id": 40,
+                "BeginOffset": 784,
+                "EndOffset": 786,
+                "Text": "20",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.877546489238739,
+                "Id": 41,
+                "BeginOffset": 787,
+                "EndOffset": 789,
+                "Text": "60",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.8617406487464905,
+                "Id": 42,
+                "BeginOffset": 790,
+                "EndOffset": 792,
+                "Text": "10",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.821601390838623,
+                "Id": 43,
+                "BeginOffset": 793,
+                "EndOffset": 795,
+                "Text": "40",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.8435389995574951,
+                "Id": 44,
+                "BeginOffset": 796,
+                "EndOffset": 798,
+                "Text": "20",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.7172441482543945,
+                "Id": 45,
+                "BeginOffset": 799,
+                "EndOffset": 800,
+                "Text": "0",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        },
+        {
+            "Type": "TEST_TREATMENT_PROCEDURE",
+            "Attribute": {
+                "Type": "TEST_VALUE",
+                "Score": 0.8435389995574951,
+                "Id": 46,
+                "BeginOffset": 801,
+                "EndOffset": 802,
+                "Text": "0",
+                "Category": "TEST_TREATMENT_PROCEDURE",
+                "Traits": []
+            }
+        }
+    ],
+    "ModelVersion": "3.0.0",
+    "ResponseMetadata": {
+        "RequestId": "00976843-a96c-4538-8aa5-9fe92570767a",
+        "HTTPStatusCode": 200,
+        "HTTPHeaders": {
+            "x-amzn-requestid": "00976843-a96c-4538-8aa5-9fe92570767a",
+            "content-type": "application/x-amz-json-1.1",
+            "content-length": "12615",
+            "date": "Wed, 05 Mar 2025 10:32:47 GMT"
+        },
+        "RetryAttempts": 0
+    }
+}

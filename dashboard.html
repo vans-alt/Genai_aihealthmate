@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIHealthMate Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .progress-circle {
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+        .progress-circle svg {
+            transform: rotate(-90deg);
+        }
+        .progress-circle text {
+            font-size: 14px;
+            font-weight: bold;
+            text-anchor: middle;
+            transform: rotate(90deg);
+            dominant-baseline: middle;
+        }
+        .task:hover {
+            background-color: rgba(255, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .button {
+            @apply bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-200;
+        }
+    </style>
+</head>
+<body class="bg-red-50 text-gray-800">
+    <header class="bg-gradient-to-r from-red-700 to-red-500 text-white py-4 shadow-lg animate-fadeIn">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold">AIHealthMate Dashboard</h1>
+            <nav>
+                <a href="index.html" class="px-4 hover:underline">Home</a>
+                <a href="profile.html" class="px-4 hover:underline">Profile</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container mx-auto p-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Task List -->
+            <div class="bg-white p-6 rounded-lg shadow-lg animate-slideInLeft border border-red-200">
+                <h2 class="text-2xl font-bold mb-4 text-red-600">Today's Goals</h2>
+                <ul id="task-list" class="list-disc pl-5 space-y-3">
+                    <li class="flex items-center space-x-3">
+                        <input type="checkbox" class="task w-5 h-5 accent-red-500" onchange="updateProgress()">
+                        <span>Take prescribed medications</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <input type="checkbox" class="task w-5 h-5 accent-red-500" onchange="updateProgress()">
+                        <span>Drink 2 liters of water</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <input type="checkbox" class="task w-5 h-5 accent-red-500" onchange="updateProgress()">
+                        <span>Complete 30 minutes of exercise</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <input type="checkbox" class="task w-5 h-5 accent-red-500" onchange="updateProgress()">
+                        <span>Eat a balanced meal with veggies and protein</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <input type="checkbox" class="task w-5 h-5 accent-red-500" onchange="updateProgress()">
+                        <span>Practice mindfulness or meditation for 5 minutes</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <input type="checkbox" class="task w-5 h-5 accent-red-500" onchange="updateProgress()">
+                        <span>Limit screen time before bed</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <input type="checkbox" class="task w-5 h-5 accent-red-500" onchange="updateProgress()">
+                        <span>Get at least 7 hours of sleep</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Progress Tracker -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center animate-fadeIn border border-red-200">
+                <h2 class="text-3xl font-bold mb-2 text-red-600 ">Task Completion</h2>
+                <div class="relative w-32 h-32 mx-auto">
+                    <svg width="200" height="200">
+                        <circle cx="100" cy="100" r="80" stroke="#ddd" stroke-width="10" fill="none"></circle>
+                        <circle id="progress-bar" cx="100" cy="100" r="80" stroke="red" stroke-width="10" fill="none" 
+                                stroke-dasharray="502" stroke-dashoffset="502" stroke-linecap="round"></circle>
+                        <!-- Centered Percentage Text -->
+                        <text id="progress-text" x="100" y="110" fill="black" font-size="28px" font-weight="bold" text-anchor="middle" dominant-baseline="middle">0%</text>
+                    </svg>
+                </div>
+            </div>
+            
+
+            <!-- GSAP Library for Smooth Animation -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+            <script>
+                function updateProgress() {
+                    const tasks = document.querySelectorAll('.task');
+                    const completedTasks = [...tasks].filter(task => task.checked).length;
+                    const totalTasks = tasks.length;
+                    const percentage = (completedTasks / totalTasks) * 100;
+
+                    const progressBar = document.getElementById('progress-bar');
+                    gsap.to(progressBar, { strokeDashoffset: 314 - (314 * (percentage / 100)), duration: 1, ease: "power2.out" });
+
+                    const progressText = document.getElementById('progress-text');
+                    progressText.textContent = `${Math.round(percentage)}%`;
+                }
+            </script>
+
+        
+            
+            
+            <!-- Healthy Living Section -->
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center animate-slideInRight relative overflow-hidden border border-red-200">
+                <h2 class="text-2xl font-bold mb-3 text-red-600">Tip of the day</h2>
+                <div class="relative w-full h-40 overflow-hidden">
+                    <img id="quote-image" src="motivation.png" alt="Healthy Lifestyle" 
+                         class="absolute inset-0 w-full h-full object-contain rounded-lg transition-opacity duration-1000 opacity-100">
+                </div>
+                
+                <p id="quote" class="italic text-gray-700 text-lg mt-4 transition-opacity duration-1000 opacity-100">Loading...</p>
+            </div>
+            
+            <script>
+                const healthQuotes = [
+                    "Eat well, move daily, hydrate often, sleep lots, and love your body.",
+                    "Your body hears everything your mind says. Stay positive!",
+                    "When diet is wrong, medicine is of no use. When diet is correct, medicine is of no need.",
+                    "A healthy outside starts from the inside.",
+                    "Drinking water is essential to a healthy lifestyle.",
+                    "Self-care is not a luxury, it’s a necessity.",
+                    "Happiness begins with good health.",
+                    "The best investment you can make is in your health.",
+                    "A balanced diet is a cookie in each hand (just kidding, eat your greens!).",
+                    "Exercise, sleep, and nutrition are the three pillars of health."
+                ];
+            
+                const healthImages = [
+                    "motivation.png",
+                    "motivation1.jpeg",
+                    "motivation2.jpeg",
+                    "motivation3.jpeg",
+                    "motivation3.jpg",
+                    "motivation4.jpeg",
+                    "motivation5.jpg",
+                    "motivation6.jpeg",
+                    "motivation7.jpg"
+                ];
+            
+                function changeQuoteAndImage() {
+                    let randomIndex = Math.floor(Math.random() * healthQuotes.length);
+                    let randomImageIndex = Math.floor(Math.random() * healthImages.length);
+                    
+                    let quoteText = document.getElementById("quote");
+                    let quoteImage = document.getElementById("quote-image");
+            
+                    // Fade out effect
+                    quoteText.style.opacity = "0";
+                    quoteImage.style.opacity = "0";
+            
+                    setTimeout(() => {
+                        // Change text and image
+                        quoteText.textContent = healthQuotes[randomIndex];
+                        quoteImage.src = healthImages[randomImageIndex];
+            
+                        // Fade in effect
+                        quoteText.style.opacity = "1";
+                        quoteImage.style.opacity = "1";
+                    }, 1000);
+                }
+            
+                // Change quote and image every 5 seconds
+                setInterval(changeQuoteAndImage, 5000);
+            
+                // Initial load
+                window.onload = changeQuoteAndImage;
+            </script>
+            
+        </div>
+        
+        <main class="container mx-auto p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 ">
+                    <!-- Streak Count -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg animate-slideInLeft border border-red-200">
+                        <h2 class="text-2xl font-bold mb-4 text-red-600 text-center">Streak Count</h2>
+                        <canvas id="streakChart"></canvas>
+                    </div>
+        
+                    <!-- Next Check-Up -->
+                    <div class="bg-white p-8 rounded-xl shadow-2xl text-center animate-fadeIn w-150 h-100 border border-red-200">
+                        <div class="flex flex-col items-center space-y-3">
+            
+                            <!-- Title -->
+                            <h2 class="text-2xl font-bold text-red-600">Next Check-Up</h2>
+                    
+                            <!-- Appointment Details -->
+                            <p class="text-gray-700">Upcoming Appointment:</p>
+                            <p class="text-lg font-semibold text-black">Feb 20, 2025</p>
+                    
+                            <!-- Doctor Info -->
+                            <p class="text-sm text-gray-500">Doctor: <span class="font-medium text-black">Dr. Sanjay Dutt</span></p>
+                            <p class="text-sm text-gray-500">Location: <span class="font-medium text-black">City Health Clinic, Chennai</span></p>
+                    
+                            
+                        </div>
+                    </div>
+                    
+        
+                    <!-- Reminders Section -->
+            <div class=" bg-white rounded-lg shadow-xl text-center animate-slideInRight w-150 border border-red-200">
+                <h2 class="text-2xl font-bold text-red-400"> Daily Reminders</h2>
+                
+                <ul class="space-y-5 text-gray-700 text-left pl-6">
+                    <li class="flex items-center space-x-2 animate-fadeIn">
+                        <span class="text-red-600">⏰</span> 
+                        <span>Take morning medication at <span class="font-semibold">8:00 AM</span></span>
+                    </li>
+                    <li class="flex items-center space-x-2 animate-fadeIn">
+                        <span class="text-blue-600">💧</span> 
+                        <span>Drink water <span class="font-semibold">every hour</span></span>
+                    </li>
+                    <li class="flex items-center space-x-2 animate-fadeIn">
+                        <span class="text-green-600">🧘</span> 
+                        <span>Stretch <span class="font-semibold">every 2 hours</span></span>
+                    </li>
+                    <li class="flex items-center space-x-2 animate-fadeIn">
+                        <span class="text-yellow-600">🚶</span> 
+                        <span>Evening walk at <span class="font-semibold">6:00 PM</span></span>
+                    </li>
+                    <li class="flex items-center space-x-2 animate-fadeIn">
+                        <span class="text-purple-600">🌙</span> 
+                        <span>Night medication at <span class="font-semibold">9:00 PM</span></span>
+                    </li>
+                </ul>
+            </div>
+
+        
+            
+        
+            </main>
+        
+            <script>
+                // Streak Chart
+                document.addEventListener("DOMContentLoaded", function () {
+                    const ctx = document.getElementById("streakChart").getContext("2d");
+                    new Chart(ctx, {
+                        type: "bar",
+                        data: {
+                            labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                            datasets: [{
+                                label: "Task Completion (%)",
+                                data: [80, 60, 90, 70, 85, 100, 95], // Example data
+                                backgroundColor: "rgba(255, 99, 132, 0.7)",
+                                borderColor: "rgba(255, 99, 132, 1)",
+                                borderWidth: 1,
+                                borderRadius: 5
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                y: { beginAtZero: true, max: 100 }
+                            }
+                        }
+                    });
+                });
+        
+                // GSAP Animations
+                gsap.from(".animate-slideInLeft", { opacity: 0, x: -50, duration: 1 });
+                gsap.from(".animate-slideInRight", { opacity: 0, x: 50, duration: 1 });
+                gsap.from(".animate-fadeIn", { opacity: 0, duration: 1 });
+        
+            </script>
+        
+        </body>
+        </html>
+
+   

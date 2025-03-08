@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-red-50 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h2 class="text-3xl font-bold text-center text-red-600 mb-6">Complete Your Profile</h2>
+        <form id="profileForm">
+            <div class="mb-4">
+                <label class="block text-gray-700">Full Name</label>
+                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Age</label>
+                <input type="number" id="age" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Enter your age" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Gender</label>
+                <select id="gender" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Date of Birth</label>
+                <input type="date" id="dob" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Height (cm)</label>
+                <input type="number" id="height" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Enter your height" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Weight (kg)</label>
+                <input type="number" id="weight" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="Enter your weight" required>
+            </div>
+            <button type="submit" class="w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700">Save & Continue</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("profileForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Get values from form
+            const profileData = {
+                name: document.getElementById("name").value,
+                age: document.getElementById("age").value,
+                gender: document.getElementById("gender").value,
+                dob: document.getElementById("dob").value,
+                height: document.getElementById("height").value,
+                weight: document.getElementById("weight").value,
+                healthDetails: document.getElementById("healthDetails").value
+            };
+
+            // Store data in localStorage
+            localStorage.setItem("profileData", JSON.stringify(profileData));
+
+            // Redirect to profile page
+            window.location.href = "profile.html";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIHealthMate</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script>
+        function toggleDropdown() {
+            document.getElementById('profileDropdown').classList.toggle('hidden');
+        }
+        document.addEventListener('click', function(event) {
+            if (!document.getElementById('profileMenu').contains(event.target)) {
+                document.getElementById('profileDropdown').classList.add('hidden');
+            }
+        });
+    </script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .fade-in-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .bg-gradient {
+            background: linear-gradient(135deg, red, rgb(209, 165, 165) );
+        }
+        .rounded-image {
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .rounded-image:hover {
+            transform: scale(1.05);
+        }
+        .blog-section {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 2rem;
+            white-space: nowrap;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .blog-card {
+            display: flex;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            width: 40rem;
+            flex-shrink: 0;
+            margin-right: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+        }
+        .blog-image {
+            width: 14rem;
+            height: 14rem;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+        .blog-content {
+            margin-left: 2rem;
+            color: white;
+            text-align: left;
+        }
+        .blog-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .blog-list {
+            color: #fcefee;
+            list-style-type: disc;
+            padding-left: 2rem;
+        }
+         /* Community Forum Section */
+    .forum-section {
+        margin: 3rem auto;
+        padding: 2rem;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        border-radius: 15px;
+        color: white;
+        text-align: center;
+    }
+    .forum-title {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .forum-description {
+        margin-bottom: 1rem;
+    }
+    .question-list {
+        background: white;
+        color: black;
+        padding: 1rem;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .question-item {
+        padding: 1rem;
+        border-bottom: 1px solid #ddd;
+    }
+    .ask-button {
+        margin-top: 1rem;
+        padding: 0.75rem 1.5rem;
+        background: #ff758c;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .ask-button:hover {
+        background: #ff5c7a;
+    }
+    /* Meet Our Team Section */
+    .team-section {
+        text-align: center;
+        padding: 3rem;
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+        border-radius: 15px;
+        color: white;
+    }
+    .team-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    .team-members {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .team-card {
+        background: white;
+        color: black;
+        border-radius: 15px;
+        padding: 1.5rem;
+        width: 250px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .team-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+    }
+    .team-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .team-role {
+        color: gray;
+        margin-bottom: 0.5rem;
+    }
+
+    </style>
+</head>
+<body class="bg-red-50 text-gray-800">
+
+   <!-- Header -->
+   <header class="bg-gradient-to-r from-red-600 to-red-800 text-white py-4 shadow-lg">
+
+    <div class="container mx-auto flex justify-between items-center px-6">
+        <!-- Logo / Brand Name -->
+        <h1 class="text-3xl font-bold">AIHealthMate - Your Virtual Healthcare Assistant</h1>
+
+        <!-- Navigation Links -->
+        <nav class="space-x-6 text-lg">
+            <a href="login.html" class="hover:underline transition duration-300">Login</a>
+            <a href="signup.html" class="hover:underline transition duration-300">Sign Up</a>
+            <a href="dashboard.html" class="hover:underline transition duration-300">Dashboard</a>
+            <a href="ratings.html" class="hover:underline transition duration-300">Rate Us</a>
+        </nav>
+
+        <!-- Profile Dropdown -->
+        <div class="relative" id="profileMenu">
+            <button onclick="toggleDropdown()" class="flex items-center space-x-2 bg-white text-gray-800 px-3 py-2 rounded-full shadow-md hover:bg-gray-200 transition duration-300">
+                <img src="profile.png" alt="Profile" class="w-10 h-10 rounded-full border-2 border-white">
+                <span class="font-semibold">Profile</span>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div id="profileDropdown" class="absolute right-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg hidden z-50">
+                <a href="profile.html" class="block px-4 py-2 hover:bg-gray-100 transition duration-300">View Profile</a>
+                <a href="settings.html" class="block px-4 py-2 hover:bg-gray-100 transition duration-300">Settings</a>
+                <a onclick="logoutUser()" class="block px-4 py-2 hover:bg-gray-100 transition duration-300">Logout</a>
+
+                <script>
+                    function logoutUser() {
+                    const cognitoUser = userPool.getCurrentUser();
+                    if (cognitoUser) {
+                        cognitoUser.signOut();
+                        alert("Logged out successfully!");
+                        window.location.href = "signin.html"; // Redirect to login page
+                    }
+                }
+
+                </script>
+
+                
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- JavaScript for Dropdown -->
+<script>
+    function toggleDropdown() {
+        let dropdown = document.getElementById("profileDropdown");
+        dropdown.classList.toggle("hidden");
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function(event) {
+        let profileMenu = document.getElementById("profileMenu");
+        let dropdown = document.getElementById("profileDropdown");
+
+        if (!profileMenu.contains(event.target)) {
+            dropdown.classList.add("hidden");
+        }
+    });
+</script>
+
+
+    <!-- Hero Section -->
+    <!-- Include Swiper.js CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+<!-- Image Slideshow Section -->
+<section class="w-full py-12 flex justify-center">
+    <div class="w-11/12"> <!-- Controls the max width -->
+        <!-- Swiper Container -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <img src="image1.jpg" alt="Healthcare AI" class="w-full rounded-image"">
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <img src="image2.jpg" alt="Smart Medical Solutions" class="w-full rounded-image"">
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <img src="image3.jpg" alt="AI in Healthcare"  class="w-full rounded-image"">
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <img src="image4.jpg" alt="Future of Medicine"  class="w-full rounded-image"">
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Pagination Dots -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Include Swiper.js JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-12" style="margin-bottom: 40px;">
+        <section class="text-center mb-12 fade-in">
+            <h2 class="text-4xl font-bold text-red-600 mb-4">Your AI-Powered Healthcare Assistant</h2>
+            <p class="text-gray-600">Get medical insights, reminders, and support from our AI chatbot.</p>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+            <div class="p-6 bg-white shadow rounded-lg card fade-in">
+                <h3 class="text-2xl font-semibold text-red-600 mb-2">Processes Medical Reports</h3>
+                <p class="text-gray-600">Detects chronic diseases and abnormalities in lab reports.</p>
+            </div>
+            <div class="p-6 bg-white shadow rounded-lg card fade-in">
+                <h3 class="text-2xl font-semibold text-red-600 mb-2">Automated Reminders</h3>
+                <p class="text-gray-600">Medication and check-up alerts for proactive healthcare.</p>
+            </div>
+            <div class="p-6 bg-white shadow rounded-lg card fade-in">
+                <h3 class="text-2xl font-semibold text-red-600 mb-2">AI Chatbot</h3>
+                <p class="text-gray-600">Engages patients with health insights and easy explanations of medical terms.</p>
+                <a href="http://localhost:8501/" target="_blank" class="mt-4 inline-block px-6 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700">
+                    Talk to AskDoc AI
+                </a>
+                
+                
+            </div>
+            <div class="p-6 bg-white shadow rounded-lg card fade-in">
+                <h3 class="text-2xl font-semibold text-red-600 mb-2">Personalized Recommendations</h3>
+                <p class="text-gray-600">Provides tailored diet and exercise plans.</p>
+                <a href="http://localhost:8501/start-streamlit" target="_blank" class="mt-4 inline-block px-6 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700">
+                    Talk to AI for Recommendations
+                </a>
+            </div>
+            <div class="p-6 bg-white shadow rounded-lg card fade-in">
+                <h3 class="text-2xl font-semibold text-red-600 mb-2">Report Comparisons</h3>
+                <p class="text-gray-600">Analyzes past and present lab reports to detect trends.</p>
+            </div>
+            <div class="p-6 bg-white shadow rounded-lg card fade-in">
+                <h3 class="text-2xl font-semibold text-red-600 mb-2">Doctor Consultation Alerts</h3>
+                <p class="text-gray-600">Flags abnormal values and suggests specialized doctor visits.</p>
+            </div>
+            <div style="color:linear-gradient(135deg, #ff9a9e, #fad0c4)">
+                .
+                .
+                .
+            </div>
+        </section>
+        
+        <!-- Blog Section -->
+<section class="blog-section">
+    <div class="blog-card">
+        <img src="blog1.jpg" alt="Health Tip 1" class="blog-image">
+        <div class="blog-content">
+            <h3 class="blog-title">Stay Hydrated</h3>
+            <ul class="blog-list">
+                <li>Drink at least 8 glasses of water daily.</li>
+                <li>Helps with digestion and skin health.</li>
+                <li>Be Mindful of Caffeine & Alcohol</li>
+                <li>Avoid sugary drinks for better hydration.</li>
+                <li>Eat Water-Rich Foods</li>
+            </ul>
+        </div>
+    </div>
+    <div class="blog-card">
+        <img src="blog2.jpg" alt="Health Tip 2" class="blog-image">
+        <div class="blog-content">
+            <h3 class="blog-title">Balanced Diet</h3>
+            <ul class="blog-list">
+                <li>Eat more fruits and vegetables.</li>
+                <li>Limit processed and sugary foods.</li>
+                <li>Include healthy fats and proteins.</li>
+                <li>Get Enough Fiber for digestion and gut health</li>
+                <li>Eat at regular intervals to keep metabolism steady</li>
+            </ul>
+        </div>
+    </div>
+    <div class="blog-card">
+        <img src="blog3.jpg" alt="Health Tip 3" class="blog-image">
+        <div class="blog-content">
+            <h3 class="blog-title">Exercise Regularly</h3>
+            <ul class="blog-list">
+                <li>At least 30 minutes of activity daily.</li>
+                <li>Choose Activities You Enjoy</li>
+                <li>Incorporate strength training</li>
+                <li>Set Goals & Track Progress</li>
+                <li>Include a Mix of Exercises</li>
+            </ul>
+        </div>
+    </div>
+    <div class="blog-card">
+        <img src="blog4.jpg" alt="Health Tip 4" class="blog-image">
+        <div class="blog-content">
+            <h3 class="blog-title">Get Enough Sleep</h3>
+            <ul class="blog-list">
+                <li>Aim for 7-9 hours per night</li>
+                <li>Make Your Bedroom Sleep-Friendly</li>
+                <li>Avoid screens before bedtime</li>
+                <li>Avoid Caffeine & Heavy Meals Late at Night</li>
+                <li>Limit Naps During the Day</li>
+            </ul>
+        </div>
+    </div>
+</section>
+        
+        <!-- Community Forum Section -->
+<section class="forum-section bg-gray-100 p-6 rounded-lg shadow-md text-center">
+    <h2 class="text-2xl font-semibold mb-2">Community Forum & Q&A</h2>
+    <p class="text-gray-600 mb-4" style="color: #fcefee;">Have health-related questions? Ask the community or help others!</p>
+
+    <!-- Question List -->
+    <div class="question-list space-y-3">
+        <div class="question-item bg-white p-4 rounded-lg shadow">
+            <strong>Q:</strong> What are the early symptoms of diabetes?
+            <p class="text-sm text-gray-500"><em>Asked by: User123</em></p>
+        </div>
+        <div class="question-item bg-white p-4 rounded-lg shadow">
+            <strong>Q:</strong> How to improve heart health naturally?
+            <p class="text-sm text-gray-500"><em>Asked by: Priya</em></p>
+        </div>
+        <div class="question-item bg-white p-4 rounded-lg shadow">
+            <strong>Q:</strong> Best exercises for back pain relief?
+            <p class="text-sm text-gray-500"><em>Asked by: Karan</em></p>
+        </div>
+    </div>
+
+    <!-- Ask a Question Button -->
+    <button id="ask-button" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md mt-4">
+        Ask a Question
+    </button>
+
+    <!-- Hidden Form (Initially Hidden) -->
+    <div id="question-form" class="hidden mt-4">
+        <textarea id="question-input" class="w-full p-2 border rounded-md text-black bg-white" rows="3" placeholder="Type your question here..."></textarea>
+        <button id="submit-question" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md mt-2">
+            Submit
+        </button>
+    </div>
+</section>
+
+<!-- JavaScript for Handling Button Click -->
+<script>
+    document.getElementById("ask-button").addEventListener("click", function() {
+        document.getElementById("question-form").classList.toggle("hidden");
+    });
+
+    document.getElementById("submit-question").addEventListener("click", function() {
+        let questionText = document.getElementById("question-input").value.trim();
+        if (questionText !== "") {
+            let newQuestion = document.createElement("div");
+            newQuestion.classList.add("question-item", "bg-white", "p-4", "rounded-lg", "shadow");
+            newQuestion.innerHTML = `<strong>Q:</strong> ${questionText}<p class="text-sm text-gray-500"><em>Asked by: Anonymous</em></p>`;
+            
+            document.querySelector(".question-list").prepend(newQuestion);
+            document.getElementById("question-input").value = "";
+            document.getElementById("question-form").classList.add("hidden");
+        } else {
+            alert("Please enter a question.");
+        }
+    });
+</script>
+
+        
+<!-- Meet Our Team Section -->
+<section class="team-section">
+    <h2 class="team-title">Meet Our Team</h2>
+    <div class="team-members">
+        <div class="team-card">
+            <img src="team1.jpg" alt="Team Member" class="team-photo">
+            <h3 class="team-name">N L Padma Swati</h3>
+            <p class="team-role">ML Enthusiast</p>
+            <p>Bridging healthcare and technology with a passion for AI, ML, and LLM innovations.</p>
+        </div>
+        <div class="team-card">
+            <img src="team1.jpg" alt="Team Member" class="team-photo">
+            <h3 class="team-name">Lathika</h3>
+            <p class="team-role">Full Stack Developer</p>
+            <p>Transforming ideas into dynamic and scalable web solutions with full-stack expertise.</p>
+        </div>
+        <div class="team-card">
+            <img src="team1.jpg" alt="Team Member" class="team-photo">
+            <h3 class="team-name">Mridhula</h3>
+            <p class="team-role">UI/UX Designer</p>
+            <p>Crafting intuitive and visually engaging experiences that blend creativity with functionality.</p>
+        </div>
+        <div class="team-card">
+            <img src="team1.jpg" alt="Team Member" class="team-photo">
+            <h3 class="team-name">Vanshita Gupta S</h3>
+            <p class="team-role">GenAI Specialist</p>
+            <p>Innovating with cutting-edge generative AI to create intelligent, adaptive, and human-like solutions.</p>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto text-center space-y-4">
+        <!-- Company Info -->
+        <p>&copy; 2025 Healthcare AI | Your Smart Medical Assistant</p>
+        <p>Programming Department, Team Movis, VIT Chennai Campus, Vandalur-Kelambakkam Road, Chennai-600127, Tamil Nadu, India</p>
+        
+        <!-- Contact Info -->
+        <p>Email: <a href="movis@gmail.com" class="text-blue-400 hover:underline">movis@gmail.com</a></p>
+        <p>Phone: <a href="tel:+91 9342327629" class="text-blue-400 hover:underline">+91 9342327629</a></p>
+        
+        <!-- Social Media Links -->
+        <div class="flex justify-center space-x-6">
+            <a href="https://www.instagram.com/movisvitcc/" target="_blank" class="hover:text-gray-400">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.linkedin.com/company/movisvitcc/posts/?feedView=all" target="_blank" class="hover:text-gray-400">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+
+    <script>
+        // Fade-in effect for sections
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        fadeInElements.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add('fade-in-active');
+            }, index * 200); // Stagger the fade-in effect
+        });
+    </script>
+</body>
+</html>

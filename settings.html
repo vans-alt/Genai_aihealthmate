@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-red-100 text-gray-900">
+
+    <div class="max-w-3xl mx-auto mt-10 p-8 bg-white shadow-xl rounded-lg border border-red-300">
+        <h2 class="text-3xl font-bold text-red-600 mb-6 text-center">Settings</h2>
+
+        <!-- Profile Section -->
+        <div class="mb-8">
+            <h3 class="text-xl font-semibold text-red-500 mb-2">Profile</h3>
+            <div class="space-y-3">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500" placeholder="Enter your name">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500" placeholder="Enter your email">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+                    <input type="tel" class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500" placeholder="Enter your phone number">
+                </div>
+                <button class="w-full mt-4 px-4 py-3 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-300">Save Changes</button>
+            </div>
+        </div>
+
+        <!-- Security Section -->
+        <div class="mb-8">
+            <h3 class="text-xl font-semibold text-red-500 mb-2">Security</h3>
+            <div class="space-y-3">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">New Password</label>
+                    <input type="password" class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500" placeholder="Enter new password">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                    <input type="password" class="w-full mt-1 p-3 border rounded-lg shadow-sm focus:ring-red-500 focus:border-red-500" placeholder="Confirm new password">
+                </div>
+                <button class="w-full mt-4 px-4 py-3 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition duration-300">Change Password</button>
+            </div>
+        </div>
+
+        <!-- Notification Preferences -->
+        <div class="mb-8">
+            <h3 class="text-xl font-semibold text-red-500 mb-2">Notification Preferences</h3>
+            <div class="space-y-3">
+                <label class="flex items-center bg-red-50 p-3 rounded-lg shadow-sm border border-red-200">
+                    <input type="checkbox" class="mr-3 accent-red-600"> Email Notifications
+                </label>
+                <label class="flex items-center bg-red-50 p-3 rounded-lg shadow-sm border border-red-200">
+                    <input type="checkbox" class="mr-3 accent-red-600"> SMS Notifications
+                </label>
+                <label class="flex items-center bg-red-50 p-3 rounded-lg shadow-sm border border-red-200">
+                    <input type="checkbox" class="mr-3 accent-red-600"> Push Notifications
+                </label>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

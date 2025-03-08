@@ -1,0 +1,15 @@
+{
+    "Records": [
+      {
+        "s3": {
+          "bucket": {
+            "name": "prescription-uploads1"
+          },
+          "object": {
+            "key": "data3.png"
+          }
+        }
+      }
+    ]
+  }
+  

@@ -1,0 +1,6 @@
+boto3
+botocore
+awscli
+six
+pillow
+requests
