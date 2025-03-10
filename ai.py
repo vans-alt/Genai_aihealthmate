@@ -12,8 +12,8 @@ st.set_page_config(
 
 # AWS S3 Configuration
 AWS_REGION = "us-east-1"
-AWS_ACCESS_KEY = "AKIAW5BDQW63SMBVGJU3"
-AWS_SECRET_KEY = "q+90RXfLWtlBmoKI5Dd1noJUHDNr6EX3XIvnmsMt"
+AWS_ACCESS_KEY = "your-access-key"
+AWS_SECRET_KEY = "your-secret-key"
 BUCKET_NAME = "prescription-uploads1"
 
 # Initialize S3 Client
