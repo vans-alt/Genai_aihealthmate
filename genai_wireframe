@@ -1,0 +1,40 @@
+digraph "GenAI Web Application" {
+	rankdir=TB size=10
+	Home [fillcolor=lightblue shape=rect style=filled]
+	"Signup/Signin" [fillcolor=lightgrey shape=rect style=filled]
+	Ratings [fillcolor=lightgrey shape=rect style=filled]
+	Dashboard [fillcolor=lightgreen shape=rect style=filled]
+	"ASKDOC AI" [fillcolor=lightyellow shape=rect style=filled]
+	Tasks [fillcolor=white shape=ellipse style=filled]
+	"Task Progress %" [fillcolor=white shape=ellipse style=filled]
+	"Daily Quote" [fillcolor=white shape=ellipse style=filled]
+	"Streak Count" [fillcolor=white shape=ellipse style=filled]
+	Reminders [fillcolor=white shape=ellipse style=filled]
+	Alerts [fillcolor=white shape=ellipse style=filled]
+	Settings [fillcolor=white shape=parallelogram style=filled]
+	"View Profile" [fillcolor=white shape=parallelogram style=filled]
+	Logout [fillcolor=white shape=parallelogram style=filled]
+	Features [fillcolor=white shape=ellipse style=filled]
+	"Healthy Practices" [fillcolor=white shape=ellipse style=filled]
+	"Meet Our Team" [fillcolor=white shape=ellipse style=filled]
+	"Contact Us" [fillcolor=white shape=ellipse style=filled]
+	Home -> "Signup/Signin"
+	Home -> Ratings
+	Home -> Dashboard
+	Home -> "ASKDOC AI"
+	Dashboard -> Tasks
+	Dashboard -> "Task Progress %"
+	Dashboard -> "Daily Quote"
+	Dashboard -> "Streak Count"
+	Dashboard -> Reminders
+	Dashboard -> Alerts
+	Dashboard -> Settings
+	Dashboard -> "View Profile"
+	Dashboard -> Logout
+	Home -> Features
+	Home -> "Healthy Practices"
+	Home -> "Meet Our Team"
+	Home -> "Contact Us"
+	"ASKDOC AI" -> Chatbot
+	"ASKDOC AI" -> "Upload Prescription"
+}

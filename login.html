@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIHealthMate - Sign In</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/amazon-cognito-identity-js/5.2.2/amazon-cognito-identity.min.js"></script>
 </head>
 <body class="bg-red-50 flex items-center justify-center min-h-screen">
     <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
@@ -14,85 +13,25 @@
             <p class="text-gray-500">Welcome back! Please sign in to continue.</p>
         </div>
         
-        <form id="signinForm" class="space-y-4">
+        <form id="signinForm" action="login.php" method="POST" class="space-y-4">
             <div>
-                <label for="emailInputSignin" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="emailInputSignin" placeholder="Enter your email" required
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" name="email" id="emailInputSignin" placeholder="Enter your email" required
                     class="mt-1 block w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500">
             </div>
             
             <div>
-                <label for="passwordInputSignin" class="block text-sm font-medium text-gray-700">Password</label>
-                <input type="password" id="passwordInputSignin" placeholder="Enter your password" required
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" name="password" id="passwordInputSignin" placeholder="Enter your password" required
                     class="mt-1 block w-full px-4 py-2 border rounded-lg focus:ring-red-500 focus:border-red-500">
             </div>
             
-            <button type="button" onclick="loginUser()" class="w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700">
-                Login
-            </button>
-
-            <p id="loginMessage" class="text-center text-sm mt-2 text-red-600"></p>
+            <button type="submit" class="w-full bg-red-600 text-white py-2 rounded-lg font-semibold hover:bg-red-700">Sign In</button>
         </form>
         
         <p class="text-sm text-gray-600 text-center mt-4">Don't have an account? 
             <a href="signup.html" class="text-red-600 hover:underline">Sign up here</a>
         </p>
     </div>
-
-    <script>
-        // ✅ Replace these values with your actual AWS Cognito credentials
-        const poolData = {
-            UserPoolId: "eu-north-1_KlqHnN9y9",  // ⚠️ Replace with your User Pool ID
-            ClientId: "6a6qvqgomq0us3vc6ocq1emd4i" // ⚠️ Replace with your App Client ID
-        };
-        const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-
-        function loginUser() {
-            const email = document.getElementById("emailInputSignin").value;
-            const password = document.getElementById("passwordInputSignin").value;
-            const loginMessage = document.getElementById("loginMessage");
-
-            // ✅ Clear previous messages
-            loginMessage.textContent = "";
-            loginMessage.classList.remove("text-green-600", "text-red-600");
-
-            if (!email || !password) {
-                loginMessage.textContent = "Please enter email and password.";
-                loginMessage.classList.add("text-red-600");
-                return;
-            }
-
-            const authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails({
-                Username: email,
-                Password: password
-            });
-
-            const userData = {
-                Username: email,
-                Pool: userPool
-            };
-
-            const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-
-            cognitoUser.authenticateUser(authenticationDetails, {
-                onSuccess: function(result) {
-                    loginMessage.textContent = "Login successful! Redirecting...";
-                    loginMessage.classList.add("text-green-600");
-                    console.log("Access Token:", result.getAccessToken().getJwtToken());
-
-                    // ✅ Save login session
-                    sessionStorage.setItem("cognitoUser", email);
-
-                    setTimeout(() => {
-                        window.location.href = "dashboard.html"; // Redirect to the dashboard
-                    }, 2000);
-                },
-                onFailure: function(err) {
-                    loginMessage.textContent = err.message || "Login failed. Please try again.";
-                    loginMessage.classList.add("text-red-600");
-                }
-            });
-        }
-    </script>
 </body>
 </html>

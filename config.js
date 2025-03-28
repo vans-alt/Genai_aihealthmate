@@ -1,6 +1,10 @@
-const poolData = {
-    UserPoolId: "eu-north-1_KlqHnN9y9",  // Replace with your actual User Pool ID
-    ClientId: "6a6qvqgomq0us3vc6ocq1emd4i" // Replace with your actual App Client ID
+window._config = {
+    cognito: {
+        userPoolId: 'eu-north-1_lerq3sfYS', 
+        userPoolClientId: '4qu5fhqmq8m5j38o2kb2spfv7d', 
+        region: 'eu-north-1' 
+    },
+    api: {
+        invokeUrl: '' 
+    }
 };
-
-const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
